@@ -12,5 +12,7 @@ What we really need to here is modify the EmployeeModel class to add a new Prope
 
 ![image](https://user-images.githubusercontent.com/32676744/223464226-ba613867-9386-48cd-8bc0-525512cd5469.png)
 
-Wait a minute, did we break OCP here ? Yes, we did . This is when we talk through when is the good idea and when its not to implement the OCP.
+Wait a minute, **did we break OCP here** ? Yes, we did . This is when we talk through when is the good idea and when its not to implement the OCP.
+
+
 
