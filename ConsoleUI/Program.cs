@@ -7,8 +7,8 @@ public class Program
         List<PersonModel> applicants = new List<PersonModel>
         {   
             new PersonModel { FirstName="Tim" ,LastName="Cook" },
-            new PersonModel { FirstName="Elon" ,LastName="Musk" },
-            new PersonModel { FirstName="Bill" ,LastName="Gates" },
+            new PersonModel { FirstName="Elon" ,LastName="Musk" , TypeOfEmployee = EmployeeType.Manager},
+            new PersonModel { FirstName="Bill" ,LastName="Gates" , TypeOfEmployee = EmployeeType.Executive },
         };
 
         List<EmployeeModel> employees = new List<EmployeeModel>();
@@ -21,7 +21,7 @@ public class Program
 
         foreach (var emp in employees)
         {
-            Console.WriteLine($"{emp.FirstName} {emp.LastName} {emp.EmailAddress}");
+            Console.WriteLine($"{emp.FirstName} {emp.LastName} {emp.EmailAddress} IsManager {emp.IsManager} IsExecutive {emp.IsExecutive}");
         }
         
         Console.ReadLine();
