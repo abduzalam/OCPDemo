@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OCPLibrary
+namespace OCPLibrary.Applicants
 {
-    public class PersonModel : IApplicantModel
+    public class TechnicianModel : IApplicantModel
     {
         public string? FirstName { get; set; }
-
         public string? LastName { get; set; }
-
-        public IAccounts AccountProcessor { get; set; } = new Accounts();
+        public IAccounts AccountProcessor { get; set; } = new Accounts.Accounts();
     }
 }

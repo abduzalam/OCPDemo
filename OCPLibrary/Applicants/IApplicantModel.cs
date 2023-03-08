@@ -1,4 +1,4 @@
-﻿namespace OCPLibrary
+﻿namespace OCPLibrary.Applicants
 {
     public interface IApplicantModel
     {

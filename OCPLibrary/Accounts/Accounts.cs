@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OCPLibrary.Applicants;
 
-namespace OCPLibrary
+namespace OCPLibrary.Accounts
 {
     public class Accounts : IAccounts
     {

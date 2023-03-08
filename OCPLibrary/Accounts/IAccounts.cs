@@ -1,4 +1,6 @@
-﻿namespace OCPLibrary
+﻿using OCPLibrary.Applicants;
+
+namespace OCPLibrary
 {
     public interface IAccounts
     {
