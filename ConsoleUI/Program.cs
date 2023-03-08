@@ -7,8 +7,8 @@ public class Program
         List<PersonModel> applicants = new List<PersonModel>
         {   
             new PersonModel { FirstName="Tim" ,LastName="Cook" },
-            new PersonModel { FirstName="Elon" ,LastName="Musk" , TypeOfEmployee = EmployeeType.Manager},
-            new PersonModel { FirstName="Bill" ,LastName="Gates" , TypeOfEmployee = EmployeeType.Executive },
+            new PersonModel { FirstName="Elon" ,LastName="Musk" },
+            new PersonModel { FirstName="Bill" ,LastName="Gates" },
         };
 
         List<EmployeeModel> employees = new List<EmployeeModel>();
