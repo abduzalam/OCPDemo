@@ -4,19 +4,19 @@ public class Program
 {
     static void Main(string[] args)
     {
-        List<PersonModel> applicants = new List<PersonModel>
+        List<IApplicantModel> applicants = new List<IApplicantModel>
         {   
             new PersonModel { FirstName="Tim" ,LastName="Cook" },
-            new PersonModel { FirstName="Elon" ,LastName="Musk" },
-            new PersonModel { FirstName="Bill" ,LastName="Gates" },
+            new ManagerModel { FirstName="Elon" ,LastName="Musk" },
+            new ExecutiveModel { FirstName="Bill" ,LastName="Gates" },
         };
 
         List<EmployeeModel> employees = new List<EmployeeModel>();
-        Accounts accountProcessor = new Accounts();
+       
 
         foreach(var person in applicants)
         {
-            employees.Add(accountProcessor.Create(person));
+            employees.Add(person.AccountProcessor.Create(person));
         }
 
         foreach (var emp in employees)
