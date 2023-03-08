@@ -101,6 +101,37 @@ so lets re-imagine how we can do this account class change in OCP way
 So we are keeping the two new properties added in to the *EmployeeModel* , but all other changes are removing from the code
 
 
+**The first real big way to make sure that you can implement OCP is to not tie yourself directly to *classes*** . This means do not use classes, try to avoid it if possible( think of interfaces here). If we not tied directly to class, we can do some modifications to existing code with minimum impact to the working code.
+Using interface we can achieve it by add on to other classes 
+
+So lets do this. go to PersonModel and extract a new interface from it. see the below screen
+
+![image](https://user-images.githubusercontent.com/32676744/223711308-94b3ebc0-96e5-4bfa-a3ba-051c9e14fe9a.png)
+
+Essentially interface is a contract, so I created a contract for the Applicants 
+![image](https://user-images.githubusercontent.com/32676744/223711799-4e31246f-02ae-4901-a5ee-2b0d767c020e.png)
+
+changes to PersonModel 
+
+![image](https://user-images.githubusercontent.com/32676744/223711925-9666768a-5486-4269-a4d3-14c46f9ce15f.png)
+
+Next in the account class, instead of using PersonMode class in the Create method, use IApplicantModel
+
+![image](https://user-images.githubusercontent.com/32676744/223712140-f31a7c8e-2bf6-4df5-9e87-550647cbe77d.png)
+
+Now I also want to do one more thing
+
+I want to create an inteface for Accounts
+
+![image](https://user-images.githubusercontent.com/32676744/223713135-4e9c3ce9-9ecd-4dc3-b56a-58f24c860ae9.png)
+
+
+so we just extracted interface for two classes 
+
+
+
+
+
 
 
 
