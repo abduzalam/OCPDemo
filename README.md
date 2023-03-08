@@ -128,8 +128,87 @@ I want to create an inteface for Accounts
 
 so we just extracted interface for two classes 
 
+Now can do some modification by actually modifying PersonModel class. we can an add one property here, yes I am doing some modification to my model. I could have done in the begining, but I coudn't think through how to implement OCP. Now I am coming back here and simulating how to do OCP and yes I have to make some modification but I am gonna make the change that wouldn't make any harm to my code. 
+
+![image](https://user-images.githubusercontent.com/32676744/223734354-aad9c28c-0e74-40b4-9560-0f0481fd15be.png)
+
+I need to put into my contract as well. 
+
+![image](https://user-images.githubusercontent.com/32676744/223734593-47ef45d9-6375-49a6-ba44-a6bdbc0f82ae.png)
 
 
+Now every IApplicantModel should have an AccoutProcessor
+
+I have assgined the Account class to the AccountProcessor in PersonModel like below
+
+![image](https://user-images.githubusercontent.com/32676744/223734974-56b3af8f-505b-4922-bea2-6f9ae87c207c.png)
+
+Now we comeback to our main program and change the Accouts creation like below
+
+![image](https://user-images.githubusercontent.com/32676744/223736161-0a83168b-868e-4410-9a4e-e2adec8feaa3.png)
+
+
+At this point also the code works without any issue
+![image](https://user-images.githubusercontent.com/32676744/223736091-e554220b-fb5e-4f18-a20a-77b48a764f19.png)
+
+
+Now change the main program again to replace PersonModel
+
+![image](https://user-images.githubusercontent.com/32676744/223736634-e455273a-67de-4099-9a61-7308ad43cb32.png)
+
+It still Ok, as the PersonModel implements all fields in the IAccountModel. so no issue, so how does it help us
+
+
+Now the boss comes to us and says I need you to give me now managers.. no problem boss
+
+Now I add a new class ManagerModel
+
+![image](https://user-images.githubusercontent.com/32676744/223738852-3126fc21-4a28-49f0-8a9e-789902e75fc8.png)
+
+We will not modify the account class , but we can create a new ManagerAccouts class and implement from IAccounts
+
+![image](https://user-images.githubusercontent.com/32676744/223739921-df7f91d5-6f8b-4389-b413-be224193f622.png)
+
+Here the Create method content we can copy & paste from Account class, but think its a DRY ( don't repeat yourself) , so we can think of having a base class to have the create method to reuse the code over here, but what if we want to have a different logic for manager creation, then we can have our own logic here..
+
+In this case, I am putting all managers to abcdcorp domain and also setting IsManager property like below 
+
+![image](https://user-images.githubusercontent.com/32676744/223741478-4bb98489-d117-49b1-b2da-b442e00824ef.png)
+
+
+Now I am saying in my ManagerModel assign the AccountProcessing = ManagerAccounts
+
+![image](https://user-images.githubusercontent.com/32676744/223741871-29389d37-ae4f-4ea1-9a43-020468ce31ab.png)
+
+Now If I go back to my main program, I can add a new manager model to the IApplicantModel without any issue
+
+changed Elon to ManagerModel
+
+![image](https://user-images.githubusercontent.com/32676744/223743074-3a5c1cc5-dc07-4256-b548-4c0eb56314bc.png)
+
+
+Output
+![image](https://user-images.githubusercontent.com/32676744/223742944-bf18ef5a-e00f-4224-9254-deda8ae4968c.png)
+
+so the code now works, here we didn't make any code changes to the existing account class, instead we created a new IAccount and extended the Account class.
+
+now if boss comes and say we need to add Executive, we can follow the similar approach done for adding manager class
+
+![image](https://user-images.githubusercontent.com/32676744/223745706-fea0dd5e-c1db-49f4-9dda-d284ef00bd56.png)
+
+Model
+
+![image](https://user-images.githubusercontent.com/32676744/223745796-182b704c-9305-456f-b4db-869cf686490b.png)
+
+
+Main program
+
+![image](https://user-images.githubusercontent.com/32676744/223746071-5a79a6b8-2f36-4381-8c98-6fabd7be036b.png)
+
+
+Output
+
+![image](https://user-images.githubusercontent.com/32676744/223746257-99ff0f80-f20e-4968-a1b7-7fbd290ef012.png)
 
 
 
