@@ -98,8 +98,7 @@ so OCP is trying to solve this problem . so the concept is if the application is
 
 so lets re-imagine how we can do this account class change in OCP way 
 
-
-
+So we are keeping the two new properties added in to the *EmployeeModel* , but all other changes are removing from the code
 
 
 
